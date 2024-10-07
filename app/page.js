@@ -1,101 +1,100 @@
 import Image from "next/image";
+import Link from "next/link";
+import Button from "../components/ui/Button";
+import { Wallet, HandCoins, Coins, Landmark, ArrowRight} from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+   <>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+   {/* Hero Section */}
+   <section
+      className=" relative min-h-screen bg-white rounded-3xl flex flex-col items-center justify-center bg-cover bg-center h-screen"
+      style={{ backgroundImage: `url("/images/bg.jpg")` }}
+    >
+      <div className="absolute inset-0 bg-black/30 rounded-2xl" />
+      <div className="flex flex-col  justify-left z-10 container-padding overflow-hidden">
+        <h1 className="text-4xl 2xl:text-6xl font-medium text-white text-left leading-normal">Take Charge of Your Finances <br></br> with Confidence and Ease</h1>
+        <p className="text-base 2xl:text-2xl text-white text-left opacity-50 font-medium mt-4">Expense Tracker is your personal finance manager, designed to help you take control of your finances with confidence and ease.</p>
+        <div className="flex flex-row items-center  gap-8 mt-8">
+      <Link href="https://expense-tracker-phi-lyart.vercel.app/login"><Button className="bg-white !text-[#2c2c2c]">Get Started Now <ArrowRight size={20} className="ml-2" /></Button></Link>
+      <div className="flex flex-row gap-4 items-center">
+      <div class="flex -space-x-2">
+  <Image
+    className="inline-block size-8 rounded-full ring-2 ring-white/30"
+    src="https://i.pravatar.cc/32?img=1"
+    alt="Avatar 1"
+    width={40}
+    height={40}
+  />
+  <Image
+    className="inline-block size-8 rounded-full ring-2 ring-white/30"
+    src="https://i.pravatar.cc/32?img=2"
+    alt="Avatar 2"
+    width={40}
+    height={40}
+  />
+  <Image
+    className="inline-block size-8 rounded-full ring-2 ring-white/30"
+    src="https://i.pravatar.cc/32?img=3"
+    alt="Avatar 3"
+    width={40}
+    height={40}
+  />
+</div>
+<p className="text-base  text-white text-left  font-medium">Trusted by over +1000 users</p>
+      </div>
+    
+      </div>
+        
+      </div>
+    </section>
+
+    {/* Feedbacks Section */}
+    <section className="container-padding">
+      <div className="flex flex-col items-center justify-center"> 
+          <h2 class="text-4xl 2xl:text-5xl font-semibold text-[#2c2c2c] mb-6">Trusted By More Than 1000+ Users</h2>
+      </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="container-padding">
+        <div className="flex flex-col items-center justify-center"> 
+          <h2 class="text-4xl 2xl:text-5xl font-semibold text-[#2c2c2c] mb-16 text-center">Get Instant Access <br></br>to Your Financial History​</h2>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="flex flex-col items-center justify-center gap-4 md:gap-8"> 
+        <div className="flex gap-4 md:gap-8 "> 
+          <div className="flex flex-col bg-white rounded-3xl p-4 md:p-6 lg:p-8"> 
+          <div className="p-3 rounded-full bg-[#0195FF] aspect-square flex items-center justify-center w-10 h-10">
+            <Wallet className="text-white" />
+          </div>
+            <h3 class="text-2xl 2xl:text-3xl font-semibold text-[#2c2c2c] my-4">Quick and Easy Expense Logging​</h3>
+            <p class="text-base 2xl:text-lg text-[#2c2c2c] opacity-50 font-medium">
+            Add expenses and income in just a few clicks. Whether it&apos;s a small purchase or a large deposit, tracking your daily transactions has never been easier.
+            </p>
+          </div>
+          <div className="flex flex-col bg-white rounded-3xl p-4 md:p-6 lg:p-8"> 
+          <div className="p-3 rounded-full bg-[#0195FF] aspect-square flex items-center justify-center w-10 h-10">
+            <Coins className="text-white" />
+          </div>
+            <h3 class="text-2xl 2xl:text-3xl font-semibold text-[#2c2c2c] my-4">Categorize and Organize Expenses​</h3>
+            <p class="text-base 2xl:text-lg text-[#2c2c2c] opacity-50 font-medium">
+            Stay organized by categorizing your expenses. From groceries to entertainment, see exactly where your money is going and make smarter financial decisions.
+            </p>
+          </div>
+          
+        </div>
+        <div className="flex flex-col bg-white rounded-3xl p-4 md:p-6 lg:p-8"> 
+          <div className="p-3 rounded-full bg-[#0195FF] aspect-square flex items-center justify-center w-10 h-10">
+            <HandCoins className="text-white" />
+          </div>
+            <h3 class="text-2xl 2xl:text-3xl font-semibold text-[#2c2c2c] my-4">Edit and Review Your Financial History</h3>
+            <p class="text-base 2xl:text-lg text-[#2c2c2c] opacity-50 font-medium">
+            Need to correct an entry or take a deeper look at your past transactions? Our app makes it easy to edit expenses and view your complete financial history.
+            </p>
+          </div>
+        </div>
+      </section>
+      </>
   );
 }
