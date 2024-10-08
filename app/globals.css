@@ -9,7 +9,7 @@ body {
 }
 
 .container-padding {
-@apply p-4 md:px-16 xl:px-24 container mx-auto w-full;
+  @apply p-4 md:px-16 xl:px-24 container mx-auto w-full;
 }
 
 @layer utilities {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Button = ({ children, onClick, className, transparent, disabled, type }) => {
     return (
