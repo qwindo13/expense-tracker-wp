@@ -10,20 +10,20 @@ export default function Accordion(props) {
     };
 
     return (
-        <motion.div layout="position" className="border-2 p-4 rounded-2xl border-neutral-200 dark:border-neutral-900" onClick={toggle}>
-            <div className="flex flex-row justify-between items-center">
+        <motion.div layout="position" className="border-b-2 p-4  border-neutral-500 w-full" onClick={toggle}>
+            <div className="flex flex-row justify-between items-center gap-8">
                 <button className="p-0 m-0 h-full text-left" type="button">
-                    <h3 className="text-xl lg:text-2xl font-semibold text-[#2c2c2c] dark:text-white">{props.title}</h3>
+                    <h3 className="text-xl lg:text-2xl font-medium text-white">{props.title}</h3>
                 </button>
                 <motion.div
                     animate={isShowing ? { rotate: 180 } : { rotate: 0 }}
-                    className="h-8 w-8"
+                    className="h-8 w-8 flex items-center justify-center text-white"
                 >
                     <ChevronDown />
                 </motion.div>
             </div>
             <div
-                className={`pt-6 text-lg font-medium opacity-50 text-[#2c2c2c] dark:text-white ${isShowing ? '' : 'hidden'}`}
+                className={`pt-6 text-lg font-medium opacity-50 text-white ${isShowing ? '' : 'hidden'}`}
             >
                 {props.children}
             </div>

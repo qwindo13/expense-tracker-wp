@@ -20,6 +20,7 @@ export default function Home() {
         const combinedData = {
           hero: result.data.page.landingPageHero,
           pricing: result.data.page.landingPagePricingPlans,
+          faq: result.data.page.landingPageFaq
         };
 
         setData(combinedData);
@@ -128,9 +129,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section 
-      Couldn't get the pricing features from wordpress due to limitations from the plugin ACF being free
-      */}
+      {/* Pricing Section - Couldn't get the pricing features from wordpress due to repeaters not being available on the free version of ACF */}
       <section id="pricing" className="container-padding">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-4xl 2xl:text-5xl font-semibold text-[#2c2c2c] mb-16 text-center">Choose the Plan That's Right for You</h2>
@@ -165,14 +164,22 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section  className="relative bg-[#2c2c2c] rounded-3xl flex items-center">
-        <div className="container-padding flex flex-col lg:flex-row items-center justify-center gap-8">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-            <h2 className="text-4xl 2xl:text-5xl font-semibold text-white text-center">Frequently Asked Questions</h2>
-            <div className="flex flex-col items-center justify-center gap-4">
-              <Accordion title="What is the app used for?">
-                <p>The app is used for tracking expenses and income.</p>
-              </Accordion>
+      <section  className="relative bg-[#2c2c2c] rounded-3xl flex items-center min-h-96">
+        <div className="container-padding flex flex-col lg:flex-row items-center justify-center gap-8 ">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 w-full h-full ">
+            <div className="w-full lg:w-1/2">
+              <h2 className="text-4xl 2xl:text-5xl font-semibold text-white ">Frequently Asked Questions</h2>
+            </div>
+              <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-1">
+              <Accordion title={data.faq.faqQuestion1}>
+              <p>{data.faq.faqAnswer1}</p>
+            </Accordion>
+            <Accordion title={data.faq.faqQuestion2}>
+              <p>{data.faq.faqAnswer2}</p>
+            </Accordion>
+            <Accordion title={data.faq.faqQuestion3}>
+              <p>{data.faq.faqAnswer3}</p>
+            </Accordion>
             </div>
           </div>
         </div>

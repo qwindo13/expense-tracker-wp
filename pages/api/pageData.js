@@ -4,7 +4,7 @@ export default async function handler(req, res) {
      query GetPageData {
   page(id: "71", idType: DATABASE_ID) {
     title
-    landingPageHero { 
+    landingPageHero {
       heroTitle
       heroSubtitle
       ctaButtonText
@@ -13,9 +13,9 @@ export default async function handler(req, res) {
         node {
           sourceUrl
         }
-      } 
+      }
     }
-      landingPagePricingPlans {
+    landingPagePricingPlans {
       pricingPlan1Title
       pricingPlan1Description
       pricingPlan1Price
@@ -25,9 +25,17 @@ export default async function handler(req, res) {
       pricingPlan3Title
       pricingPlan3Description
       pricingPlan3Price
+    }
+    landingPageFaq {
+      faqQuestion1
+      faqAnswer1
+      faqQuestion2
+      faqAnswer2
+      faqQuestion3
+      faqAnswer3
+    }
+        }
       }
-  }
-}
     `
   };
 
