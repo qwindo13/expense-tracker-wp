@@ -8,9 +8,8 @@ const Header = () => {
       <div className=' rounded-full p-4 w-full flex flex-row items-center justify-between'>
         <Link href="/" className='pl-2'><Image src="/images/logo.svg" height={48} width={48} className='rounded-2xl' alt="Logo" /></Link>
         <div className='flex flex-row items-center gap-4'>
-            <Link href="https://expense-tracker-phi-lyart.vercel.app/login">
-          <Button className="bg-white !text-[#2c2c2c]">Get Started Now</Button>
-          </Link>
+        <Link href="/#pricing"><Button transparent className="text-white">Pricing</Button></Link>
+            <Link href="https://expense-tracker-phi-lyart.vercel.app/login"><Button className="bg-white !text-[#2c2c2c]">Get Started Now</Button></Link>
         </div>
       </div>
     </header>
