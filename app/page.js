@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../components/ui/Button";
-import PricingCard from "../components/pricing/PricingCard";
+import FeaturesCard from "../components/cards/FeaturesCard";
+import PricingCard from "../components/cards/PricingCard";
 import Accordion from "../components/ui/Accordion";
 import Marquee from "react-fast-marquee";
 import { Wallet, HandCoins, Coins, Landmark, ArrowRight } from "lucide-react";
@@ -99,35 +100,19 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center justify-center gap-4 md:gap-8">
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 ">
-            <div className="flex flex-col bg-white rounded-3xl p-4 md:p-6 lg:p-8">
-              <div className="p-3 rounded-full bg-[#0195FF] aspect-square flex items-center justify-center w-10 h-10">
-                <Wallet className="text-white" />
-              </div>
-              <h3 class="text-2xl 2xl:text-3xl font-semibold text-[#2c2c2c] my-4">Quick and Easy Expense Logging​</h3>
-              <p class="text-base 2xl:text-lg text-[#2c2c2c] opacity-50 font-medium">
-                Add expenses and income in just a few clicks. Whether it&apos;s a small purchase or a large deposit, tracking your daily transactions has never been easier.
-              </p>
+            <div className="w-full md:w-1/3">
+            <FeaturesCard 
+            title="Quick and Easy Expense Logging​" 
+            icon={<Wallet className="text-[#2c2c2c]" />} 
+            image="/images/phone.png"
+            highlight
+            />
             </div>
-            <div className="flex flex-col bg-white rounded-3xl p-4 md:p-6 lg:p-8">
-              <div className="p-3 rounded-full bg-[#0195FF] aspect-square flex items-center justify-center w-10 h-10">
-                <Coins className="text-white" />
-              </div>
-              <h3 class="text-2xl 2xl:text-3xl font-semibold text-[#2c2c2c] my-4">Categorize and Organize Expenses​</h3>
-              <p class="text-base 2xl:text-lg text-[#2c2c2c] opacity-50 font-medium">
-                Stay organized by categorizing your expenses. From groceries to entertainment, see exactly where your money is going and make smarter financial decisions.
-              </p>
+            <div className="w-full md:w-2/3">
+            <FeaturesCard title="Categorize and Organize Expenses​" description="Stay organized by categorizing your expenses. From groceries to entertainment, see exactly where your money is going and make smarter financial decisions." icon={<Coins className="text-white" />} />
             </div>
-
           </div>
-          <div className="flex flex-col bg-white rounded-3xl p-4 md:p-6 lg:p-8">
-            <div className="p-3 rounded-full bg-[#0195FF] aspect-square flex items-center justify-center w-10 h-10">
-              <HandCoins className="text-white" />
-            </div>
-            <h3 class="text-2xl 2xl:text-3xl font-semibold text-[#2c2c2c] my-4">Edit and Review Your Financial History</h3>
-            <p class="text-base 2xl:text-lg text-[#2c2c2c] opacity-50 font-medium">
-              Need to correct an entry or take a deeper look at your past transactions? Our app makes it easy to edit expenses and view your complete financial history.
-            </p>
-          </div>
+        <FeaturesCard title="Categorize and Organize Expenses​" description="Stay organized by categorizing your expenses. From groceries to entertainment, see exactly where your money is going and make smarter financial decisions." icon={<Coins className="text-white" />} />
         </div>
       </section>
 
