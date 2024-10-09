@@ -34,6 +34,9 @@ export default async function handler(req, res) {
       faqQuestion3
       faqAnswer3
     }
+       landingPageMarquee {
+      marqueeText
+    }
         }
       }
     `

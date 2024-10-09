@@ -6,6 +6,7 @@ import Link from "next/link";
 import Button from "../components/ui/Button";
 import PricingCard from "../components/pricing/PricingCard";
 import Accordion from "../components/ui/Accordion";
+import Marquee from "react-fast-marquee";
 import { Wallet, HandCoins, Coins, Landmark, ArrowRight } from "lucide-react";
 
 export default function Home() {
@@ -20,7 +21,8 @@ export default function Home() {
         const combinedData = {
           hero: result.data.page.landingPageHero,
           pricing: result.data.page.landingPagePricingPlans,
-          faq: result.data.page.landingPageFaq
+          faq: result.data.page.landingPageFaq,
+          marquee: result.data.page.landingPageMarquee
         };
 
         setData(combinedData);
@@ -127,6 +129,18 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Marquee Section */}
+      <section className="overflow-hidden relative">
+        <div className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-neutral-100 to-transparent w-8 lg:w-16 z-10"></div>
+        <div className="absolute top-0 right-0 bottom-0 bg-gradient-to-l from-neutral-100 to-transparent w-8 lg:w-16 z-10"></div>
+        <Marquee autoFill={true} className="min-h-20 relative">
+          <div className="flex flex-row items-center justify-center gap-4 opacity-50 px-8">
+            <Image src="/images/logo-dark.svg" alt="Logo" width={48} height={48} />
+             <h2 className="text-4xl 2xl:text-5xl font-semibold text-[#2c2c2c]">{data.marquee.marqueeText}</h2>
+             </div>
+         </Marquee>
       </section>
 
       {/* Pricing Section - Couldn't get the pricing features from wordpress due to repeaters not being available on the free version of ACF */}
