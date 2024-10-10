@@ -58,12 +58,12 @@ export default function Home() {
 
             {/* Winner Leaf  */}
             <div className="flex items-center mb-8">
-              <Image src="/images/leaf-left.svg" alt="Winner Leaf" width={40} height={40} />
+              <Image src="/images/leaf-left.svg" alt="Left Winner Leaf" width={40} height={40} />
               <div className="flex flex-col items-center justify-center">
                 <span className="text-white text-xl font-medium"> 4.9 Stars </span>
                 <span className="text-[#0195FF] text-sm font-medium "> 1000+ Reviews </span>
               </div>
-              <Image src="/images/leaf-right.svg" alt="Winner Leaf" width={40} height={40} />
+              <Image src="/images/leaf-right.svg" alt="Right Winner Leaf" width={40} height={40} />
             </div>
 
             <h1 className="text-4xl 2xl:text-6xl font-semibold text-white text-left">{data.hero.heroTitle}</h1>
@@ -87,21 +87,21 @@ export default function Home() {
               <Image
                 className="inline-block size-12 rounded-full ring-4 ring-neutral-100"
                 src="https://i.pravatar.cc/100?img=1"
-                alt="Avatar 1"
+                alt="User Avatar 1"
                 width={100}
                 height={100}
               />
               <Image
                 className="inline-block size-12 rounded-full ring-4 ring-neutral-100"
                 src="https://i.pravatar.cc/100?img=2"
-                alt="Avatar 2"
+                alt="User Avatar 2"
                 width={40}
                 height={40}
               />
               <Image
                 className="inline-block size-12 rounded-full ring-4 ring-neutral-100"
                 src="https://i.pravatar.cc/100?img=3"
-                alt="Avatar 3"
+                alt="User Avatar 3"
                 width={40}
                 height={40}
               />
@@ -286,4 +286,3 @@ export default function Home() {
     </>
   );
 }
-
