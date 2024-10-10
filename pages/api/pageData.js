@@ -48,6 +48,8 @@ export default async function handler(req, res) {
       faqAnswer2
       faqQuestion3
       faqAnswer3
+      faqQuestion4
+      faqAnswer4
     }
        landingPageMarquee {
       marqueeText

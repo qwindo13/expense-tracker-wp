@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ScreenLoader from "../components/ui/ScreenLoader";
 import Button from "../components/ui/Button";
 import FeaturesCard from "../components/cards/FeaturesCard";
 import PricingCard from "../components/cards/PricingCard";
 import TestimonialCard from "../components/cards/TestimonialCard";
 import Accordion from "../components/ui/Accordion";
 import Marquee from "react-fast-marquee";
-import { Wallet, HandCoins, Coins, Landmark, ArrowRight } from "lucide-react";
+import { Wallet, HandCoins, Coins } from "lucide-react";
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -41,7 +42,7 @@ export default function Home() {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <ScreenLoader />;
   }
 
   return (
@@ -108,7 +109,7 @@ export default function Home() {
             <p className="text-base text-[#2c2c2c]text-left font-medium">Trusted by over +1000 users</p>
           </div>
 
-          <h2 className ="text-4xl 2xl:text-5xl font-semibold text-[#2c2c2c]  text-center">Build a stronger financial future, today. </h2>
+          <h2 className="text-4xl 2xl:text-5xl font-semibold text-[#2c2c2c]  text-center">Build a stronger financial future, today. </h2>
           <span className="text-base 2xl:text-lg text-[#2c2c2c] opacity-50 font-medium text-center max-w-[283px] sm:max-w-[627px] mx-auto">
             Our app is designed to help you take control of your finances, no matter your experience level. Whether you&apos;re a beginner or an expert, we&apos;ve got you covered.
           </span>
@@ -124,10 +125,18 @@ export default function Home() {
               />
             </div>
             <div className="w-full md:w-2/3">
-              <FeaturesCard title={data.features.feature2Title} description={data.features.feature2Description} icon={<Coins className="text-white" />} />
+              <FeaturesCard
+                title={data.features.feature2Title}
+                description={data.features.feature2Description}
+                icon={<HandCoins className="text-white" />}
+              />
             </div>
           </div>
-          <FeaturesCard title={data.features.feature3Title} description={data.features.feature3Description} icon={<Coins className="text-white" />} />
+          <FeaturesCard
+            title={data.features.feature3Title}
+            description={data.features.feature3Description}
+            icon={<Coins className="text-white" />}
+          />
         </div>
       </section>
 
@@ -135,8 +144,8 @@ export default function Home() {
       <section className="overflow-hidden relative">
         <div className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-neutral-100 to-transparent w-12 lg:w-16 z-10"></div>
         <div className="absolute top-0 right-0 bottom-0 bg-gradient-to-l from-neutral-100 to-transparent w-12 lg:w-16 z-10"></div>
-        <Marquee autoFilL className="min-h-20 relative">
-          <div className="flex flex-row items-center justify-center gap-4 opacity-50 px-8">
+        <Marquee autoFil className="min-h-20">
+          <div className="flex flex-row items-center justify-center gap-4 opacity-50 px-8 w-auto">
             <Image src="/images/logo-dark.svg" alt="Logo" width={48} height={48} />
             <h2 className="text-4xl 2xl:text-5xl font-semibold text-[#2c2c2c]">{data.marquee.marqueeText}</h2>
           </div>
@@ -158,19 +167,19 @@ export default function Home() {
             <Marquee autoFill={true} >
               <div className="flex items-center justify-center gap-8 mr-8">
                 <TestimonialCard
-                 authorImage={data.testimonials.author1Image?.node?.sourceUrl}
+                  authorImage={data.testimonials.author1Image?.node?.sourceUrl}
                   authorName={data.testimonials.author1Name}
                   review={data.testimonials.author1Review}
                   stars={data.testimonials.author1Stars}
                 />
                 <TestimonialCard
-                 authorImage={data.testimonials.author2Image?.node?.sourceUrl}
+                  authorImage={data.testimonials.author2Image?.node?.sourceUrl}
                   authorName={data.testimonials.author2Name}
                   review={data.testimonials.author2Review}
                   stars={data.testimonials.author2Stars}
                 />
-               <TestimonialCard
-                 authorImage={data.testimonials.author3Image?.node?.sourceUrl}
+                <TestimonialCard
+                  authorImage={data.testimonials.author3Image?.node?.sourceUrl}
                   authorName={data.testimonials.author3Name}
                   review={data.testimonials.author3Review}
                   stars={data.testimonials.author3Stars}
@@ -179,20 +188,20 @@ export default function Home() {
             </Marquee>
             <Marquee autoFill direction="right">
               <div className="flex items-center justify-center gap-8 mr-8">
-              <TestimonialCard
-                 authorImage={data.testimonials.author1Image?.node?.sourceUrl}
+                <TestimonialCard
+                  authorImage={data.testimonials.author1Image?.node?.sourceUrl}
                   authorName={data.testimonials.author1Name}
                   review={data.testimonials.author1Review}
                   stars={data.testimonials.author1Stars}
                 />
-               <TestimonialCard
-                 authorImage={data.testimonials.author2Image?.node?.sourceUrl}
+                <TestimonialCard
+                  authorImage={data.testimonials.author2Image?.node?.sourceUrl}
                   authorName={data.testimonials.author2Name}
                   review={data.testimonials.author2Review}
                   stars={data.testimonials.author2Stars}
                 />
-              <TestimonialCard
-                 authorImage={data.testimonials.author3Image?.node?.sourceUrl}
+                <TestimonialCard
+                  authorImage={data.testimonials.author3Image?.node?.sourceUrl}
                   authorName={data.testimonials.author3Name}
                   review={data.testimonials.author3Review}
                   stars={data.testimonials.author3Stars}
@@ -263,9 +272,9 @@ export default function Home() {
       {/* Call to Action Section */}
       <section className="relative bg-[#2c2c2c] rounded-3xl flex items-center min-h-96">
         <div className="container-padding flex flex-col lg:flex-row items-center justify-center gap-8 ">
-          <div className="flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-start md:items-center justify-center gap-4">
             <h2 className="text-4xl 2xl:text-5xl font-semibold text-white ">{data.cta.ctaTitle}</h2>
-            <span className="text-base 2xl:text-lg text-white opacity-50 font-medium text-center max-w-[283px] sm:max-w-[627px] mx-auto">
+            <span className="text-base 2xl:text-lg text-white opacity-50 font-medium text-left md:text-center md:max-w-[627px] mx-auto">
               {data.cta.ctaSubtitle}
             </span>
             <Link href={data.cta.ctaButtonLink} className="mt-8">
