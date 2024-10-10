@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`bg-neutral-100 ${inter.className} w-full overflow-x-hidden p-2 lg:p-4`}>
         <Header />
-        <main className="flex flex-col w-full gap-8 md:gap-16 overflow-x-hidden">
+        <main className="flex flex-col w-full gap-8 overflow-x-hidden">
           {children}
         </main>
           <Footer />

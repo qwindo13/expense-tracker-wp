@@ -15,7 +15,22 @@ export default async function handler(req, res) {
         }
       }
     }
+    landingPageFeatures {
+      feature1Title
+      feature1Description
+      feature1Image {
+        node {
+          sourceUrl
+        }
+      }
+      feature2Title
+      feature2Description
+      feature3Title
+      feature3Description
+
+    }
     landingPagePricingPlans {
+      title
       pricingPlan1Title
       pricingPlan1Description
       pricingPlan1Price
@@ -37,8 +52,40 @@ export default async function handler(req, res) {
        landingPageMarquee {
       marqueeText
     }
+        landingPageTestimonials {
+          author1Name
+          author1Review
+          author1Stars
+          author1Image {
+            node {
+              sourceUrl
+            }
+          }
+          author2Name
+          author2Review
+          author2Stars
+          author2Image {
+            node {
+              sourceUrl
+            }
+          }
+          author3Name
+          author3Review
+          author3Stars
+          author3Image {
+            node {
+              sourceUrl
+            }
+          }
         }
+          landingPageCta {
+            ctaTitle
+            ctaSubtitle
+            ctaButtonText
+            ctaButtonLink
+          }
       }
+  }
     `
   };
 
