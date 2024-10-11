@@ -6,7 +6,7 @@ This is a simple landing page for an Expense Tracker application. It is built as
 
 - Next.js
 - TailwindCSS
-- TypeScript (nice to have)
+- WordPress (with ACF and GraphQL)
 
 ## Getting Started
 
